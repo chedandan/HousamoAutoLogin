@@ -21,7 +21,7 @@ jobs:
       run: pip install requests
     - name: Read anth_key from secrets  #读取账号
       env: 
-        auth_key: ${{ secrets.auth_key }} # secrets 提供
+        auth_key: ${{ secrets.AUTH_KEY }} # secrets 提供
       run: | 
         echo $auth_key > auth_key.txt
     - name: Login #登录
