@@ -13,13 +13,9 @@ header = {
     'Accept-Encoding': 'gzip',
 }
 
-data = {
-    'auth_key' : '5w8ji2ldso00ccocgcsg44sk8gsk8ckowo4s44kwo4sswkos'
-}
+f = open(r"auth_key.txt", 'r')
+auth_key = f.read()
 
-
-#res = requests.post('https://elb.housamo.jp/account/login',headers=header, data=data_json)
-# print(res)
-# print(res.content)
-res = requests.get('http://elb.housamo.jp/user/status?auth_key=5w8ji2ldso00ccocgcsg44sk8gsk8ckowo4s44kwo4sswkos', headers = header)
+url = 'http://elb.housamo.jp/user/status?auth_key=' + auth_key
+res = requests.get(url, headers = header)
 print(res.content)
