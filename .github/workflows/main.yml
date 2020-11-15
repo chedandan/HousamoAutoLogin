@@ -22,10 +22,5 @@ jobs:
     - name: Read anth_key from secrets  #读取账号
       env: 
         auth_key: ${{ secrets.AUTH_KEY }} # secrets 提供
-      run: | 
-        echo $auth_key
     - name: Login #登录
       run: python Login.py
-    - name: Delete secrets  #删除账号
-      run: | 
-        rm -f auth_key.txt
