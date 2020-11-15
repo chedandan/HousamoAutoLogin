@@ -1,3 +1,4 @@
+import os
 import requests
 
 header = {
@@ -13,9 +14,7 @@ header = {
     'Accept-Encoding': 'gzip',
 }
 
-f = open(r"auth_key.txt", 'r')
-auth_key = f.read()
-print(auth_key)
+auth_key = os.environ["authkey"]
 
 url = 'http://elb.housamo.jp/user/status?auth_key=' + auth_key
 res = requests.get(url, headers = header)
