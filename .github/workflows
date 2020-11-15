@@ -20,4 +20,4 @@ jobs:
     - name: Install requests #安装requests
       run: pip install requests
     - name: Login #登录
-      run: python 2.py
+      run: python Login.py
