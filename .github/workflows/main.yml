@@ -2,7 +2,7 @@ name: 'housamoAutoLogin'
  
 on:
   schedule:
-    - cron: '12 */6 * * *'
+    - cron: '0 */12 * * *'
   watch:
     types: [started]
 
@@ -19,5 +19,13 @@ jobs:
         python-version: 3.8
     - name: Install requests #安装requests
       run: pip install requests
+    - name: Read anth_key from secrets  #读取账号
+      env: 
+        auth_key: ${{ secrets.auth_key }} # secrets 提供
+      run: | 
+        echo $auth_key > auth_key.txt
     - name: Login #登录
       run: python Login.py
+    - name: Delete secrets  #删除账号
+      run: | 
+        rm -f auth_key.txt
