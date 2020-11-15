@@ -15,6 +15,7 @@ header = {
 
 f = open(r"auth_key.txt", 'r')
 auth_key = f.read()
+print(auth_key)
 
 url = 'http://elb.housamo.jp/user/status?auth_key=' + auth_key
 res = requests.get(url, headers = header)
