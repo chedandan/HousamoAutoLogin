@@ -14,7 +14,7 @@ header = {
     'Accept-Encoding': 'gzip',
 }
 
-auth_key = os.environ["authkey"]
+auth_key = os.environ["auth_key"]
 
 url = 'http://elb.housamo.jp/user/status?auth_key=' + auth_key
 res = requests.get(url, headers = header)
