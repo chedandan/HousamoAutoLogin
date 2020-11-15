@@ -19,8 +19,7 @@ jobs:
         python-version: 3.8
     - name: Install requests #安装requests
       run: pip install requests
-    - name: Read anth_key from secrets  #读取账号
+    - name: Read anth_key & Login  #读取账号并登录
       env: 
         auth_key: ${{ secrets.AUTH_KEY }} # secrets 提供
-    - name: Login #登录
       run: python Login.py
