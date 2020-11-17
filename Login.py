@@ -35,8 +35,8 @@ url1 = 'http://elb.housamo.jp/user/status?auth_key=' + auth_key
 url2 = 'http://elb.housamo.jp/account/login'
 url3 = 'https://elb.housamo.jp/user/status?auth_key=' + auth_key
 
-requests.get(url1, headers = header1)
-requests.post(url2, headers = header2, data = data)
-res = requests.get(url3, headers = header1)
+res1 = requests.get(url1, headers = header1)
+res2 = requests.post(url2, headers = header2, data = data)
+res3 = requests.get(url3, headers = header1)
 
-print(res.content)
+print(res1.content, res2.content, res3.content)
