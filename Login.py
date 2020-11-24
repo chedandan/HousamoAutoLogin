@@ -27,16 +27,22 @@ header2 = {
     'Accept-Encoding': 'gzip'
 }
 
-data = {'auth_key': os.environ["auth_key"]}
 
-auth_key = os.environ["auth_key"]
+def Login(auth_key):
+    data = {'auth_key': auth_key}
 
-url1 = 'http://elb.housamo.jp/user/status?auth_key=' + auth_key
-url2 = 'http://elb.housamo.jp/account/login'
-url3 = 'https://elb.housamo.jp/user/status?auth_key=' + auth_key
+    url1 = 'http://elb.housamo.jp/user/status?auth_key=' + auth_key
+    url2 = 'http://elb.housamo.jp/account/login'
+    url3 = 'https://elb.housamo.jp/user/status?auth_key=' + auth_key
 
-res1 = requests.get(url1, headers = header1)
-res2 = requests.post(url2, headers = header2, data = data)
-res3 = requests.get(url3, headers = header1)
+    res1 = requests.get(url1, headers=header1)
+    res2 = requests.post(url2, headers=header2, data=data)
+    res3 = requests.get(url3, headers=header1)
 
-print(res1.content, res2.content, res3.content)
+    if(len(res1 + res2 + res3) == 0):
+        print('OK!')
+
+auth_keys = [os.environ["auth_key_dandan"], os.environ["auth_key_pipi"]]
+
+for auth_key in auth_keys:
+    Login(auth_key) 
