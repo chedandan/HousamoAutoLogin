@@ -2,7 +2,7 @@ name: 'housamoAutoLogin'
  
 on:
   schedule:
-    - cron: '0  15/6 * * *'
+    - cron: '0  0,7,15,23 * * *'
   watch:
     types: [started]
 
