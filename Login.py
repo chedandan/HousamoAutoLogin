@@ -42,7 +42,7 @@ def Login(auth_key):
     if(len(res1.content + res2.content + res3.content) != 0):
         print('OK!')
 
-auth_keys = [os.environ["auth_key_dandan"], os.environ["auth_key_pipi"]]
+auth_keys = [os.environ["AUTH_KEY_DANDAN"], os.environ["AUTH_KEY_PIPI"]]
 
 for auth_key in auth_keys:
     Login(auth_key) 
