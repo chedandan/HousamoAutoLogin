@@ -39,8 +39,9 @@ def Login(auth_key):
     res2 = requests.post(url2, headers=header2, data=data)
     res3 = requests.get(url3, headers=header1)
 
-    if(len(res1.content + res2.content + res3.content) != 0):
-        print('OK!')
+    print(res1.content + '\n')
+    print(res2.content + '\n')
+    print(res3.content + '\n')
 
 auth_keys = [os.environ["auth_key_dandan"], os.environ["auth_key_pipi"]]
 
