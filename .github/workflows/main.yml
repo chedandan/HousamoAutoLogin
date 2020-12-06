@@ -5,7 +5,7 @@ on:
     - cron: '0  0,7,15,23 * * *'
   watch:
     types: [started]
-  workflow_dispatch
+  workflow_dispatch:
 
 jobs:
   build:
