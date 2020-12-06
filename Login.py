@@ -43,6 +43,6 @@ def login_by_authkey(auth_key):
     print(res3.text, '\n')
 
 if __name__ == '__main__':
-    AUTH_KEYS = (os.environ["auth_key_dandan"], os.environ["auth_key_pipi"])
+    AUTH_KEYS = (os.environ["auth_key_gofly"],)
     for auth_key in AUTH_KEYS:
         login_by_authkey(auth_key) 
