@@ -1,11 +1,11 @@
 name: 'housamoAutoLogin'
  
 on:
+  workflow_dispatch:
   schedule:
     - cron: '0  0,7,15,23 * * *'
   watch:
     types: [started]
-  workflow_dispatch:
 
 jobs:
   build:
