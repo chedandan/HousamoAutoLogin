@@ -6,7 +6,7 @@ header_get = {
     'GCA': 'X',
     'Content-Type': 'application/x-www-form-urlencoded',
     'CDNDataVersion': '6310',
-    'User-Agent': 'HousamoAPI/4.10.2 Android OS 6.0.1 / API-23 (V417IR/eng.luoweiqiao.20201016.150344) Netease MuMu',
+    'User-Agent': 'HousamoAPI/4.11.0 Android OS 6.0.1 / API-23 (V417IR/eng.luoweiqiao.20201016.150344) Netease MuMu',
     'Response-Crypt': 'enable',
     'Host': 'elb.housamo.jp',
     'Connection': 'Keep-Alive',
@@ -19,7 +19,7 @@ header_post = {
     'GCA': 'X',
     'Content-Type': 'application/x-www-form-urlencoded',
     'CDNDataVersion': '6310',
-    'User-Agent': 'HousamoAPI/4.10.2 Android OS 6.0.1 / API-23 (V417IR/eng.luoweiqiao.20201016.150344) Netease MuMu',
+    'User-Agent': 'HousamoAPI/4.11.0 Android OS 6.0.1 / API-23 (V417IR/eng.luoweiqiao.20201016.150344) Netease MuMu',
     'Response-Crypt': 'enable',
     'Content-Length': '57',
     'Host': 'elb.housamo.jp',
@@ -43,7 +43,7 @@ def Login(auth_key):
     print(res2.content, '\n')
     print(res3.content, '\n')
 
-auth_keys = [os.environ["auth_key_dandan"], os.environ["auth_key_pipi"]]
+auth_keys = (os.environ["auth_key_gofly"],)
 
 for auth_key in auth_keys:
     Login(auth_key) 
