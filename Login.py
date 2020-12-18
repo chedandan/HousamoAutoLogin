@@ -1,12 +1,14 @@
 import requests
 import os
 
+UA = 'HousamoAPI/4.12.0 Android OS 6.0.1 / API-23 (V417IR/eng.luoweiqiao.20201016.150344)'
+
 HEADER_GET = {
     'X-Unity-Version': '2018.4.7f1',
     'GCA': 'X',
     'Content-Type': 'application/x-www-form-urlencoded',
     'CDNDataVersion': '6423',
-    'User-Agent': 'HousamoAPI/4.12.0 Android OS 6.0.1 / API-23 (V417IR/eng.luoweiqiao.20201016.150344)',
+    'User-Agent': UA,
     'Response-Crypt': 'enable',
     'Host': 'elb.housamo.jp',
     'Connection': 'Keep-Alive',
@@ -19,13 +21,15 @@ HEADER_POST = {
     'GCA': 'X',
     'Content-Type': 'application/x-www-form-urlencoded',
     'CDNDataVersion': '6423',
-    'User-Agent': 'HousamoAPI/4.12.0 Android OS 6.0.1 / API-23 (V417IR/eng.luoweiqiao.20201016.150344)',
+    'User-Agent': UA,
     'Response-Crypt': 'enable',
     'Host': 'elb.housamo.jp',
     'Connection': 'Keep-Alive',
     'Accept-Encoding': 'gzip'
 }
 
+res0 = requests.get('http://elb.housamo.jp/gateway/list', headers=HEADER_GET)
+UA = 'HousamoAPI/' + res0.headers['ClientVersion'] + ' Android OS 6.0.1 / API-23 (V417IR/eng.luoweiqiao.20201016.150344)'
 
 def login_by_authkey(auth_key):
     data = {'auth_key': auth_key}
