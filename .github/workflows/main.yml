@@ -24,4 +24,5 @@ jobs:
       env: 
         auth_key_dandan: ${{ secrets.AUTH_KEY_DANDAN }}   # secrets 提供
         auth_key_pipi: ${{ secrets.AUTH_KEY_PIPI }}
+        auth_key_yixin: ${{ secrets.AUTH_KEY_YIXIN }}
       run: python Login.py
