@@ -28,7 +28,7 @@ HEADER_POST = {
     'Accept-Encoding': 'gzip'
 }
 
-#获取最新版本的HousamoAPI
+#获取最新版本的HousamoAPI更新User-Agent
 res0 = requests.get('http://elb.housamo.jp/gateway/list', headers=HEADER_GET)
 UA = 'HousamoAPI/' + res0.headers['ClientVersion'] + ' Android OS 6.0.1 / API-23 (V417IR/eng.luoweiqiao.20201016.150344)'
 
