@@ -22,7 +22,7 @@ jobs:
       run: pip install requests
     - name: Read anth_key & Login  #读取账号并登录
       env: 
-        auth_key_dandan: ${{ secrets.AUTH_KEY_DANDAN }}   # secrets 提供
+        auth_key_dandan: ${{ secrets.AUTH_KEY_DANDAN }}   # 由secrets 提供
         auth_key_pipi: ${{ secrets.AUTH_KEY_PIPI }}
         auth_key_yixin: ${{ secrets.AUTH_KEY_YIXIN }}
       run: python Login.py
