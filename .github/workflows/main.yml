@@ -26,4 +26,5 @@ jobs:
         auth_key_pipi: ${{ secrets.AUTH_KEY_PIPI }}
         auth_key_yixin: ${{ secrets.AUTH_KEY_YIXIN }}
         auth_key_muochi: ${{ secrets.AUTH_KEY_MUOCHI }}
+        auth_key_yu: ${{ secrets.AUTH_KEY_YU }}
       run: python Login.py
