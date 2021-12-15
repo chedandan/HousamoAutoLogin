@@ -49,6 +49,6 @@ def login_by_authkey(auth_key):
     print(res3.text, '\n')
 
 if __name__ == '__main__':
-    AUTH_KEYS = (os.environ["auth_key_dandan"], os.environ["auth_key_pipi"], os.environ["auth_key_yixin"], os.environ["auth_key_muochi"], os.environ["auth_key_yu"], os.environ["auth_key_morong"], os.environ["auth_key_liangtai"])
+    AUTH_KEYS = (os.environ["auth_key_dandan"], os.environ["auth_key_pipi"], os.environ["auth_key_yixin"], os.environ["auth_key_muochi"], os.environ["auth_key_yu"], os.environ["auth_key_morong"], os.environ["auth_key_liangtai"], os.environ["auth_key_pipi2"])
     for auth_key in AUTH_KEYS:
         login_by_authkey(auth_key) 
