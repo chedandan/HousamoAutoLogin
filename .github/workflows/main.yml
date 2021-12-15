@@ -29,4 +29,5 @@ jobs:
         auth_key_yu: ${{ secrets.AUTH_KEY_YU }}
         auth_key_morong: ${{ secrets.AUTH_KEY_MORONG }}
         auth_key_liangtai: ${{ secrets.AUTH_KEY_LIANGTAI }}
+        auth_key_pipi2: ${{ secrets.AUTH_KEY_PIPI2 }}
       run: python Login.py
