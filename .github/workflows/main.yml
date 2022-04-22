@@ -30,4 +30,7 @@ jobs:
         auth_key_morong: ${{ secrets.AUTH_KEY_MORONG }}
         auth_key_liangtai: ${{ secrets.AUTH_KEY_LIANGTAI }}
         auth_key_pipi2: ${{ secrets.AUTH_KEY_PIPI2 }}
+        auth_key_axing1: ${{ secrets.AUTH_KEY_AXING1 }}
+        auth_key_axing2: ${{ secrets.AUTH_KEY_AXING2 }}
+        auth_key_axing3: ${{ secrets.AUTH_KEY_AXING3 }}
       run: python Login.py
