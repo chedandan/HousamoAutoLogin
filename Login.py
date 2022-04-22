@@ -1,5 +1,5 @@
 import requests
-import os
+import os. re
 
 UA = 'HousamoAPI/4.12.0 Android OS 6.0.1 / API-23 (V417IR/eng.luoweiqiao.20201016.150344)'
 
@@ -49,6 +49,10 @@ def login_by_authkey(auth_key):
     print(res3.text, '\n')
 
 if __name__ == '__main__':
-    AUTH_KEYS = (os.environ["auth_key_dandan"], os.environ["auth_key_pipi"], os.environ["auth_key_yixin"], os.environ["auth_key_muochi"], os.environ["auth_key_yu"], os.environ["auth_key_morong"], os.environ["auth_key_liangtai"], os.environ["auth_key_pipi2"])
-    for auth_key in AUTH_KEYS:
-        login_by_authkey(auth_key) 
+    pattern = re.compile(r'auth_key_.*')
+    environment = os.environ
+    auth_keys = []
+    for item in environment.keys():
+        if pattern.match(item):
+            auth_key = environment[item]
+            login_by_authkey(auth_key) 
