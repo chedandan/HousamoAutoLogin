@@ -55,6 +55,6 @@ if __name__ == '__main__':
     for item in auth_keys.keys():
         if pattern.match(item):
             print(item)
-            auth_key = auth[item]
+            auth_key = auth_keys[item]
             #login_by_authkey(auth_key) 
 
