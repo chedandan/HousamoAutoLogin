@@ -51,11 +51,10 @@ def login_by_authkey(auth_key):
 if __name__ == '__main__':
     auth_keys = eval(os.environ['auth_keys'])
     print(auth_keys)
-#     pattern = re.compile(r'AUTH_KEY_.*')                #匹配环境变量中的auth_key
-#     for item in auth_keys.keys():
-#         if pattern.match(item):
-#             auth_key = auth[item]
-#             login_by_authkey(auth_key) 
-#     for auth_key in auth_keys.values():
-#         login_by_authkey(auth_key) 
+    pattern = re.compile(r'AUTH_KEY_.*')                #匹配secrets中的auth_key
+    for item in auth_keys.keys():
+        if pattern.match(item):
+            print(item)
+            auth_key = auth[item]
+            #login_by_authkey(auth_key) 
 
