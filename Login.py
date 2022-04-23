@@ -49,7 +49,7 @@ def login_by_authkey(auth_key):
     print(res3.text, '\n')
 
 if __name__ == '__main__':
-    auth_keys = os.environ['auth_keys']
+    auth_keys = eval(os.environ['auth_keys'])
     print(auth_keys)
 #     pattern = re.compile(r'AUTH_KEY_.*')                #匹配环境变量中的auth_key
 #     for item in auth_keys.keys():
