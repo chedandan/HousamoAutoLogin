@@ -22,15 +22,5 @@ jobs:
       run: pip install requests
     - name: Read anth_key & Login  #读取账号并登录
       env: 
-        auth_key_dandan: ${{ secrets.AUTH_KEY_DANDAN }}   # 由secrets 提供
-        auth_key_pipi: ${{ secrets.AUTH_KEY_PIPI }}
-        auth_key_yixin: ${{ secrets.AUTH_KEY_YIXIN }}
-        auth_key_muochi: ${{ secrets.AUTH_KEY_MUOCHI }}
-        auth_key_yu: ${{ secrets.AUTH_KEY_YU }}
-        auth_key_morong: ${{ secrets.AUTH_KEY_MORONG }}
-        auth_key_liangtai: ${{ secrets.AUTH_KEY_LIANGTAI }}
-        auth_key_pipi2: ${{ secrets.AUTH_KEY_PIPI2 }}
-        auth_key_axing1: ${{ secrets.AUTH_KEY_AXING1 }}
-        auth_key_axing2: ${{ secrets.AUTH_KEY_AXING2 }}
-        auth_key_axing3: ${{ secrets.AUTH_KEY_AXING3 }}
+        auth_keys: ${{ secrets }}   # 由secrets 提供
       run: python Login.py
