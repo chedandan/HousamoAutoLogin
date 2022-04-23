@@ -49,10 +49,12 @@ def login_by_authkey(auth_key):
     print(res3.text, '\n')
 
 if __name__ == '__main__':
-    environment = os.environ
-    print(environment)
-#     pattern = re.compile(r'auth_key_.*')                #匹配环境变量中的auth_key
-#     for item in environment.keys():
+    auth_keys = os.environ['auth_keys']
+#     pattern = re.compile(r'AUTH_KEY_.*')                #匹配环境变量中的auth_key
+#     for item in auth_keys.keys():
 #         if pattern.match(item):
-#             auth_key = environment[item]
+#             auth_key = auth[item]
 #             login_by_authkey(auth_key) 
+    for auth_key in auth_keys.values():
+        login_by_authkey(auth_key) 
+
