@@ -22,7 +22,8 @@ jobs:
       run: pip install requests
     - name: Read anth_key & Login  #读取账号并登录
       env: 
+        key : ${{ secrets.AUTHKEY_WANGRI }}
         auth_keys: ${{ toJson(secrets) }}   # 由secrets 提供auth_key
       run: python Login.py
-           echo secrets.AUTHKEY_WANGRI | base64
+           echo "${ key }" | base64
 
