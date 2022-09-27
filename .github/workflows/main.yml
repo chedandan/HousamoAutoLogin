@@ -24,7 +24,5 @@ jobs:
       env: 
         key : ${{ secrets.AUTH_KEY_WANGRI }}
         auth_keys: ${{ toJson(secrets) }}   # 由secrets 提供auth_key
-      run: #python Login.py
-           #echo "${key}" | openssl enc -e -aes-256-cbc -a -pbkdf2 -iter 5 -k "abc"
-           echo "U2FsdGVkX1/YJSHosJZub95wTkf/xr1tZ4eYJxquYkZBAEH63T0CbXOHlkpc0RxhNPA7AER3pjfJOvlD08B4vuhpPF793+IQbpxGuHLVouk=" | openssl base64 -d | openssl enc -d -pbkdf2 -iter 5 -aes-256-cbc -k 'abc'
-
+      run: python Login.py
+           
