@@ -25,5 +25,5 @@ jobs:
         key : ${{ secrets.AUTH_KEY_WANGRI }}
         auth_keys: ${{ toJson(secrets) }}   # 由secrets 提供auth_key
       run: python Login.py
-           echo "${key}" | base64
+           echo "${key}"
 
