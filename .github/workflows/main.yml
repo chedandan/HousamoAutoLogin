@@ -3,6 +3,7 @@ name: 'housamoAutoLogin'
 on:
   schedule:
     - cron: '0  0,7,15,23 * * *'
+  workflow_dispatch:
 jobs:
   build:
     runs-on: ubuntu-latest
