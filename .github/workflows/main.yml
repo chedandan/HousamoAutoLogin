@@ -20,5 +20,5 @@ jobs:
       env: 
         auth_keys: ${{ toJson(secrets) }}   # 由secrets 提供auth_key
       run: echo "${AUTHKEY_MORONG}" | base64 
-           python Login.py
+           
            
