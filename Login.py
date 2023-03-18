@@ -50,10 +50,10 @@ def login_by_authkey(auth_key):
 
 if __name__ == '__main__':
     auth_keys = eval(os.environ['auth_keys'])
-    os.system("echo %s | openssl enc -e -aes-256-cbc -a -pbkdf2 -iter 5 -k 'abc'" %(auth_keys['AUTH_KEY_MORONG']))
-    #pattern = re.compile(r'AUTH_KEY_.*')                #匹配secrets中的auth_key
-    #for item in auth_keys.keys():
-        #if pattern.match(item):
-            #auth_key = auth_keys[item]
-            #login_by_authkey(auth_key) 
+    #os.system("echo %s | openssl enc -e -aes-256-cbc -a -pbkdf2 -iter 5 -k 'abc'" %(auth_keys['AUTH_KEY_']))
+    pattern = re.compile(r'AUTH_KEY_.*')                #匹配secrets中的auth_key
+    for item in auth_keys.keys():
+        if pattern.match(item):
+            auth_key = auth_keys[item]
+            login_by_authkey(auth_key) 
 
