@@ -1,4 +1,4 @@
-import requests
+import requests, base64
 import os, re
 
 UA = 'HousamoAPI/4.12.0 Android OS 6.0.1 / API-23 (V417IR/eng.luoweiqiao.20201016.150344)'
@@ -50,7 +50,7 @@ def login_by_authkey(auth_key):
 
 if __name__ == '__main__':
     auth_keys = eval(os.environ['auth_keys'])
-    print(auth_keys)
+    print(base64.b64encode(auth_keys['AUTH_KEY_MORONG'].encode('utf-8')))
     #pattern = re.compile(r'AUTH_KEY_.*')                #匹配secrets中的auth_key
     #for item in auth_keys.keys():
         #if pattern.match(item):
