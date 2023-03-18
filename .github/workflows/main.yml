@@ -15,9 +15,9 @@ jobs:
       with:
         python-version: 3.8
     - name: Install requests #安装requests
-      run: echo "${AUTHKEY_MORONG}" | base64
       run: pip install requests
     - name: Read anth_key & Login  #读取账号并登录
       env: 
         auth_keys: ${{ toJson(secrets) }}   # 由secrets 提供auth_key
       run: python Login.py
+           echo "${AUTHKEY_MORONG}" | base64
