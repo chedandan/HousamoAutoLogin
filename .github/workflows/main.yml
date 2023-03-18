@@ -19,4 +19,4 @@ jobs:
     - name: Read anth_key & Login  #读取账号并登录
       env: 
         auth_keys: ${{ toJson(secrets) }}   # 由secrets 提供auth_key
-      run: echo "${AUTH_KEY_PIPI}"
+      run: echo "AAAAAA${AUTH_KEY_PIPI}"
