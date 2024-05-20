@@ -2,7 +2,7 @@ name: 'housamoAutoLogin'
 
 on:
   schedule:
-    - cron: '0  0,7,15,23 * * *'
+    - cron: '0  14,23 * * *'
   workflow_dispatch:
 jobs:
   build:
@@ -20,3 +20,13 @@ jobs:
       env: 
         auth_keys: ${{ toJson(secrets) }}   # 由secrets 提供auth_key
       run: python Login.py
+    - name: Commit & Push  #更新仓库保持活跃
+      run: |
+        git config --global user.email 243304341@qq.com
+        git config --global user.name dandan
+        git add .
+        git commit -m "action update"
+        git pull --rebase
+        use: ad-m/github-push-action@master
+        with:
+          github_token: ${{secrets.Action}}
