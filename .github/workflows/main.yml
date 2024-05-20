@@ -21,12 +21,10 @@ jobs:
         auth_keys: ${{ toJson(secrets) }}   # 由secrets 提供auth_key
       run: python Login.py
     - name: Commit & Push  #更新仓库保持活跃
-      run: |
-        git config --global user.email 243304341@qq.com
-        git config --global user.name dandan
-        git add .
-        git commit -m "action update"
-        git pull --rebase
-        use: ad-m/github-push-action@master
-        with:
-          github_token: ${{secrets.Action}}
+      uses: EndBug/add-and-commit@v4
+      with:
+        author_name: chedandan
+        author_email: 243304341@qq.com
+        message: "action update"
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
