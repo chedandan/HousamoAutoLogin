@@ -1,1 +1,1 @@
-HousamoAPI/5.11.9 Android OS 6.0.1 / API-23 (V417IR/eng.luoweiqiao.20201016.150344)
+HousamoAPI/5.12.0 Android OS 6.0.1 / API-23 (V417IR/eng.luoweiqiao.20201016.150344)
