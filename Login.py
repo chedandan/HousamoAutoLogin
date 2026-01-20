@@ -1,7 +1,9 @@
 import requests, base64
 import os, re
 
-UA = 'HousamoAPI/4.12.0 Android OS 6.0.1 / API-23 (V417IR/eng.luoweiqiao.20201016.150344)'
+with open("UA.txt", "r") as f:
+    lines = f.readlines()
+    UA = lines[0].strip()
 
 HEADER_GET = {
     'X-Unity-Version': '2018.4.7f1',
@@ -31,8 +33,9 @@ HEADER_POST = {
 #获取最新版本的HousamoAPI更新User-Agent
 res0 = requests.get('http://elb.housamo.jp/gateway/list', headers=HEADER_GET)
 UA = 'HousamoAPI/' + res0.headers['ClientVersion'] + ' Android OS 6.0.1 / API-23 (V417IR/eng.luoweiqiao.20201016.150344)'
-with open("1.txt", "w") as f:
-    f.write(UA)
+with open("UA.txt", "w") as f:
+    f.write(f"{UA}\n")
+    f.write(f"{random.random()}\n")    #防止官方长期不更新API仓库不活跃
 
 #登录
 def login_by_authkey(auth_key):
