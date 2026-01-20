@@ -21,10 +21,10 @@ jobs:
         auth_keys: ${{ toJson(secrets) }}   # 由secrets 提供auth_key
       run: python Login.py
     - name: Commit & Push  #更新仓库保持活跃
-      uses: EndBug/add-and-commit@v4
+      uses: EndBug/add-and-commit@v9
       with:
-        author_name: chedandan
-        author_email: 243304341@qq.com
+        default_author: github_actions
         message: "action update"
+        add: '.'
       env:
         GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
