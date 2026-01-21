@@ -1,5 +1,4 @@
-import requests, base64
-import os, re
+import os, re, random, requests
 
 with open("UA.txt", "r") as f:
     lines = f.readlines()
@@ -55,7 +54,7 @@ def login_by_authkey(auth_key):
 
 if __name__ == '__main__':
     auth_keys = eval(os.environ['auth_keys'])
-    #os.system("echo %s | openssl enc -e -aes-256-cbc -a -pbkdf2 -iter 5 -k 'abc'" %(auth_keys['AUTH_KEY_PIPI2']))
+    #os.system("echo %s | openssl enc -e -aes-256-cbc -a -pbkdf2 -iter 5 -k 'abc'" %(auth_keys['AUTH_KEY_PIPI2']))    #auth_key丢了可以加密输出来找回
     pattern = re.compile(r'AUTH_KEY_.*')                #匹配secrets中的auth_key
     for item in auth_keys.keys():
         if pattern.match(item):
