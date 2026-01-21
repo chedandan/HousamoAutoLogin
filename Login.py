@@ -32,7 +32,7 @@ HEADER_POST = {
 
 #获取最新版本的HousamoAPI更新User-Agent
 res0 = requests.get('http://elb.housamo.jp/gateway/list', headers=HEADER_GET)
-UA = 'HousamoAPI/' + res0.headers['ClientVersion'] + ' Android OS 6.0.1 / API-23 (V417IR/eng.luoweiqiao.20201016.150344)'
+UA = 'HousamoAPI/' + res0.headers['ClientVersion'] + ' Android OS 16.0 / API-36 (OnePlus/PJF110/OP5CFBL1:16/UKQ1.231108.001/U.2f3586c-dab26b-dbd0c4:user/release-keys)'
 with open("UA.txt", "w") as f:
     f.write(f"{UA}\n")
     f.write(f"{random.random()}\n")    #防止官方长期不更新API仓库不活跃
