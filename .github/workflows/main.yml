@@ -4,27 +4,32 @@ on:
   schedule:
     - cron: '0  15,3 * * *'
   workflow_dispatch:
+
+permissions:
+  contents: write
+  
 jobs:
-  build:
+  login:
     runs-on: ubuntu-latest
+    
     steps:
-    - name: Checkout
-      uses: actions/checkout@master
-    - name: Set up Python #安装python
-      uses: actions/setup-python@v7
-      with:
-        python-version: 3.12
-    - name: Install requests #安装requests
-      run: pip install requests
-    - name: Read anth_key & Login  #读取账号并登录
-      env: 
-        auth_keys: ${{ toJson(secrets) }}   # 由secrets 提供auth_key
-      run: python Login.py
-    - name: Commit & Push  #更新仓库保持活跃
-      uses: EndBug/add-and-commit@v9
-      with:
-        default_author: github_actions
-        message: "action update"
-        add: '.'
-      env:
-        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
+      - uses: actions/checkout@v7
+      - uses: actions/setup-python@v7
+        with:
+          python-version: 3.12
+        
+      - run: pip install requests
+      
+      - name: Read auth_key & Login  #读取账号并登录
+        env: 
+          auth_keys: ${{ toJson(secrets) }}   # 由secrets 提供userkey
+        run: python Login.py
+        
+      - name: Commit & Push  #更新仓库保持活跃
+        uses: EndBug/add-and-commit@v10
+        with:
+          default_author: github_actions
+          message: "action update"
+          add: '.'
+        env:
+          GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
