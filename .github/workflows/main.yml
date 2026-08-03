@@ -11,7 +11,7 @@ jobs:
     - name: Checkout
       uses: actions/checkout@master
     - name: Set up Python #安装python
-      uses: actions/setup-python@v1
+      uses: actions/setup-python@v7
       with:
         python-version: 3.12
     - name: Install requests #安装requests
