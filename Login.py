@@ -1,4 +1,4 @@
-import os, re, random, requests
+import os, re, json, random, requests
 
 with open("UA.txt", "r") as f:
     lines = f.readlines()
