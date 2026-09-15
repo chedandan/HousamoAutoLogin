@@ -30,7 +30,7 @@ HEADER_POST = {
 }
 
 #获取最新版本的HousamoAPI更新User-Agent
-res0 = requests.get('http://elb.housamo.jp/gateway/list', headers=HEADER_GET)
+res0 = requests.get('https://elb.housamo.jp/gateway/list', headers=HEADER_GET)
 UA = 'HousamoAPI/' + res0.headers['ClientVersion'] + ' Android OS 16.0 / API-36 (OnePlus/PJF110/OP5CFBL1:16/UKQ1.231108.001/U.2f3586c-dab26b-dbd0c4:user/release-keys)'
 with open("UA.txt", "w") as f:
     f.write(f"{UA}\n")
@@ -40,9 +40,9 @@ with open("UA.txt", "w") as f:
 def login_by_authkey(auth_key):
     data = {'auth_key': auth_key}
 
-    url1 = 'http://elb.housamo.jp/account/login'
+    url1 = 'https://elb.housamo.jp/account/login'
     url2 = f'https://elb.housamo.jp/user/status?auth_key={auth_key}'
-    url3 = f'http://elb.housamo.jp/mypage/status?auth_key={auth_key}'
+    url3 = f'https://elb.housamo.jp/mypage/status?auth_key={auth_key}'
 
     res1 = requests.post(url1, headers = HEADER_POST, data = data)
     res2 = requests.get(url2, headers = HEADER_GET)
@@ -53,7 +53,7 @@ def login_by_authkey(auth_key):
     print(res3.text, '\n')
 
 if __name__ == '__main__':
-    auth_keys = eval(os.environ['auth_keys'])
+    auth_keys = json.loads(os.environ['auth_keys'])
     #os.system("echo %s | openssl enc -e -aes-256-cbc -a -pbkdf2 -iter 5 -k 'abc'" %(auth_keys['AUTH_KEY_PIPI2']))    #auth_key丢了可以加密输出来找回
     pattern = re.compile(r'AUTH_KEY_.*')                #匹配secrets中的auth_key
     for item in auth_keys.keys():
